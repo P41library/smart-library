@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "rewrites": [
-    { "source": "/assets/:path*", "destination": "/dist/client/assets/:path*" },
-    { "source": "/robots.txt", "destination": "/dist/client/robots.txt" },
-    { "source": "/:path*", "destination": "/api/server" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
