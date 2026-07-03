@@ -1,24 +1,9 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "functions": {
-    "api/server.js": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 30
-    }
-  },
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/dist/client/assets/$1"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/dist/client/robots.txt"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/server"
-    }
+  "rewrites": [
+    { "source": "/assets/:path*", "destination": "/dist/client/assets/:path*" },
+    { "source": "/robots.txt", "destination": "/dist/client/robots.txt" },
+    { "source": "/:path*", "destination": "/api/server" }
   ]
 }
