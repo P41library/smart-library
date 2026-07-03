@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
+import "../styles.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "../components/theme-provider";
 import { CustomCursor } from "../components/custom-cursor";
