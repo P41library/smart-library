@@ -1,7 +1,24 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": ".output/public",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "functions": {
+    "api/server.js": {
+      "runtime": "@vercel/node@3",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/client/assets/$1"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/dist/client/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/server"
+    }
   ]
 }
